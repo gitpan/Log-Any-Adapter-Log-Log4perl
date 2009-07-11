@@ -1,0 +1,33 @@
+NAME
+    Log::Any::Adapter::Log::Log4perl
+
+SYNOPSIS
+        use Log::Log4perl;
+        Log::Log4perl::init('/etc/log4perl.conf');
+        Log::Any->set_adapter('Log::Log4perl');
+
+DESCRIPTION
+    This Log::Any adapter uses Log::Log4perl for logging. log4perl must be
+    initialized before calling *set_adapter*. There are no parameters.
+
+LOG LEVEL TRANSLATION
+    Log levels are translated from Log::Any to Log4perl as follows:
+
+        notice -> info
+        warning -> warn
+        critical -> fatal
+        alert -> fatal
+        emergency -> fatal
+
+SEE ALSO
+    Log::Any, Log::Log4perl
+
+AUTHOR
+    Jonathan Swartz
+
+COPYRIGHT & LICENSE
+    Copyright (C) 2007 Jonathan Swartz, all rights reserved.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
